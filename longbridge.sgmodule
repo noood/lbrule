@@ -1,0 +1,5 @@
+#!name=Longbridge Proxy
+#!desc=Route Longbridge traffic through proxy
+
+[Rule]
+RULE-SET,https://cdn.jsdelivr.net/gh/HuTaoo29/Passwall@main/rules/longbridge.list,PROXY
