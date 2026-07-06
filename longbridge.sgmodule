@@ -2,6 +2,7 @@
 #!desc=Route Longbridge traffic through proxy
 #!personal link=https://github.com/noood/lbrule/blob/main/rules/longbridge.list
 
-
 [Rule]
 RULE-SET,https://cdn.jsdelivr.net/gh/HuTaoo29/Passwall@main/rules/longbridge.list,PROXY
+
+#!add to ss: shadowrocket://install?module=https://example.com/longbridge.sgmodule
