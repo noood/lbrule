@@ -1,0 +1,30 @@
+# Longbridge / LongPort / 长桥
+
+# LongBridge 主体系
+DOMAIN-SUFFIX,longbridge.com
+DOMAIN-SUFFIX,longbridge.cn
+DOMAIN-SUFFIX,longbridge.hk
+DOMAIN-SUFFIX,longbridge.sg
+DOMAIN-SUFFIX,longbridge.global
+DOMAIN-SUFFIX,longbridgehk.com
+
+# LongPort / 历史 App / 旧 OpenAPI 体系
+DOMAIN-SUFFIX,longportapp.com
+DOMAIN-SUFFIX,longportapp.cn
+DOMAIN-SUFFIX,longbridgeapp.com
+
+# 长桥资源、活动、公开文件、App 资源域名
+DOMAIN-SUFFIX,lbkrs.com
+DOMAIN-SUFFIX,lbctrl.com
+
+# 开发者文档 / SDK 文档
+DOMAIN,longbridge.github.io
+DOMAIN,longportapp.github.io
+
+# 活动页 / 下载页 / H5 营销页相关
+DOMAIN,longbridge.activity.wbrks.com
+
+# Longbridge Whale / 机构端 / B2B 技术服务
+DOMAIN-SUFFIX,longbridgewhale.com
+DOMAIN-SUFFIX,longportwhale.com
+DOMAIN-SUFFIX,longbridge.cloud
