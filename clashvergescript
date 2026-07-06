@@ -1,0 +1,25 @@
+function main(config) {
+  const proxyPolicy = "节点选择";
+  const providerName = "longbridge";
+
+  config["rule-providers"] = config["rule-providers"] || {};
+  config["rule-providers"][providerName] = {
+    type: "http",
+    behavior: "classical",
+    format: "text",
+    url: "https://cdn.jsdelivr.net/gh/HuTaoo29/Passwall@main/rules/longbridge.list",
+    path: "./ruleset/longbridge.list",
+    interval: 86400,
+  };
+
+  config.rules = config.rules || [];
+  const longbridgeRule = `RULE-SET,${providerName},${proxyPolicy}`;
+
+  config.rules = config.rules.filter((rule) => {
+    return typeof rule !== "string" || !rule.startsWith(`RULE-SET,${providerName},`);
+  });
+
+  config.rules.unshift(longbridgeRule);
+
+  return config;
+}
