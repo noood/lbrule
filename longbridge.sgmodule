@@ -13,4 +13,4 @@
 #!system=ios
 
 [Rule]
-DOMAIN,ws-gl.lbkrs.com,PROXY
+DOMAIN,ws.lbkrs.com,PROXY
