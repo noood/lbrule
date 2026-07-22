@@ -2,7 +2,15 @@
 #!desc=Route Longbridge traffic through proxy
 #!personal link=https://github.com/noood/lbrule/blob/main/rules/longbridge.list
 
-[Rule]
-RULE-SET,https://cdn.jsdelivr.net/gh/HuTaoo29/Passwall@main/rules/longbridge.list,PROXY
+#![Rule]
+#!RULE-SET,https://cdn.jsdelivr.net/gh/HuTaoo29/Passwall@main/rules/longbridge.list,PROXY
 
 #!add to ss: shadowrocket://install?module=https://example.com/longbridge.sgmodule
+
+
+#!name=长桥精准分流
+#!desc=仅将长桥交易 WebSocket
+#!system=ios
+
+[Rule]
+DOMAIN,ws-gl.lbkrs.com,PROXY
