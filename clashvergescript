@@ -1,25 +1,24 @@
-function main(config) {
-  const proxyPolicy = "节点选择";
-  const providerName = "longbridge";
+//function main(config, profileName) {
+//  return config;
+//}
 
-  config["rule-providers"] = config["rule-providers"] || {};
-  config["rule-providers"][providerName] = {
-    type: "http",
-    behavior: "classical",
-    format: "text",
-    url: "https://cdn.jsdelivr.net/gh/HuTaoo29/Passwall@main/rules/longbridge.list",
-    path: "./ruleset/longbridge.list",
-    interval: 86400,
-  };
+function main(config) {
+  const proxyPolicy = "节点选择"; // 你的代理策略组名称
 
   config.rules = config.rules || [];
-  const longbridgeRule = `RULE-SET,${providerName},${proxyPolicy}`;
 
+  // 清理之前测试残留的 lbkrs 相关规则，防止每次保存重复堆积
   config.rules = config.rules.filter((rule) => {
-    return typeof rule !== "string" || !rule.startsWith(`RULE-SET,${providerName},`);
+    return typeof rule !== "string" || !rule.includes("lbkrs.com");
   });
 
-  config.rules.unshift(longbridgeRule);
+  // 极致精简：只针对 api-gl.lbkrs.com 这一个交易接口强制代理
+const newRules = [
+    `DOMAIN,ws-gl.lbkrs.com,${proxyPolicy}`,     // 走代理
+    ];
+
+  // 将这唯一的一条规则插入到所有规则的最前面
+  config.rules = [...newRules, ...config.rules];
 
   return config;
 }
